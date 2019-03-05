@@ -10,6 +10,7 @@ entity ripple_adder is
             A, B    : in std_logic_vector(3 downto 0);
             C_out   : out std_logic;
             S       : out std_logic_vector(3 downto 0));
+            -- Can also do s0, s1, s2, s3 and concatenate in next part into 1 signal
 end ripple_adder;
 
 architecture ripple_adder_arch of ripple_adder is
@@ -43,7 +44,7 @@ begin
         Port Map(   A => A(2), 
                     B => B(2), 
                     C_in => C(1), 
-                    S => S(0), 
+                    S => S(2), 
                     C_out => C(2)
        );
     
@@ -51,7 +52,7 @@ begin
         Port Map(   A => A(3), 
                     B => B(3), 
                     C_in => C(2), 
-                    S => S(0), 
+                    S => S(3), 
                     C_out => C_out
         );  
     
