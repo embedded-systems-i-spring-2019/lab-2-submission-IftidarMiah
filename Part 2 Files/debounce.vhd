@@ -6,7 +6,7 @@ use IEEE.std_logic_1164.all;
 use IEEE.numeric_std.all;
 
 entity debounce is
-    port(   clk, btn0    : in    std_logic;
+    port(   clk, btn    : in    std_logic;
             dbnc         : out   std_logic);
 end debounce;
 
@@ -19,7 +19,7 @@ begin
     debounce: process(clk)
     begin
         if rising_edge(clk) then
-            shift <= shift(0) & btn0;    -- Shift left 1, put btn0 at shift(0)
+            shift <= shift(0) & btn;    -- Shift left 1, put btn at shift(0)
                 
             if ((shift(1) = '1') AND (unsigned(count) /= 4)) then      -- Check if shift(1) = 1 then check and increment counter                                        
                 count <= std_logic_vector(unsigned(count) + 1);     -- Increment count when shift(0) = 1 and count < 4

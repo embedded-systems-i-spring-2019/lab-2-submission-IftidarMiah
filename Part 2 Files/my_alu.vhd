@@ -39,7 +39,7 @@ begin
                 when 7      => funct <= std_logic_vector(unsigned(A) srl 1);
                 when 8      =>
                     if (A(3) = '1') then
-                        funct <= ('1' & std_logic_vector(unsigned(A) srl 1));
+                        funct <= ('1' & std_logic_vector(unsigned(A(3 downto 1))));
                     else
                         funct <= std_logic_vector(unsigned(A) srl 1);
                     end if;
