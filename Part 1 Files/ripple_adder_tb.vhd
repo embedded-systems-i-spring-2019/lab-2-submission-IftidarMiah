@@ -23,6 +23,11 @@ architecture ripple_adder_arch_tb of ripple_adder_tb is
     
 begin
 
+    -- 4 addition tests
+    -- 0000 + 0000 + 1 = 0 0001
+    -- 0110 + 1001 + 0 = 0 1111
+    -- 1001 + 0111 + 1 = 1 0001
+    -- 1111 + 1001 + 1 = 1 1001
     A_proc: process
     begin
         wait for 8ns;
