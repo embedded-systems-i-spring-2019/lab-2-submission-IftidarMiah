@@ -18,6 +18,8 @@ architecture alu_tester_arch of alu_tester is
     signal B_val   : std_logic_vector(3 downto 0) := "0000";
     signal Op_val   : std_logic_vector(3 downto 0) := "0000";
 
+    
+
     component my_alu
         port(   clk     : in    std_logic;
                 A, B    : in    std_logic_vector(3 downto 0);
@@ -31,7 +33,7 @@ architecture alu_tester_arch of alu_tester is
     end component;
     
 begin
-    
+   
     alu_test_proc: process(clk)
     begin
         if rising_edge(clk) then
